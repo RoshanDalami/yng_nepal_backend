@@ -33,7 +33,7 @@ export async function CreateBanner(req, res) {
     if (!file) {
       return;
     }
-    Banner.updateMany({ isActive: false });
+   await Banner.updateMany({ isActive: false });
     const image = await uploadOnCloudinary(file);
     const newBanner = new Banner({
       imageurl: image.url,
