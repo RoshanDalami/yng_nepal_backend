@@ -24,10 +24,21 @@ export async function CreateAdvisory(req, res) {
   }
 }
 
-export async function GetAdvisory(req,res){
-    try {
-        
-    } catch (error) {
-        return res.status(500).json(new ApiResponse(500,null,"Internal Server Error"))
-    }
+import { Advisory } from "../Model/Advisory.model.js";
+import { ApiResponse } from "../utils/apiResponse.js";
+
+export async function GetAdvisory(req, res) {
+  try {
+    // Get all advisories
+    const advisories = await Advisory.find();
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, advisories, "Advisories fetched successfully"));
+  } catch (error) {
+    console.error("Error fetching advisories:", error);
+    return res
+      .status(500)
+      .json(new ApiResponse(500, null, "Internal Server Error"));
+  }
 }

@@ -13,10 +13,13 @@ app.use(
 );
 import NewsRoutes from "./router/new.routes.js";
 import BannerRouter from "./router/banner.routes.js";
-
+import manageRoutes from "./router/management.routes.js";
+import adviosoryRouter from "./router/advisory.routes.js";
 
 app.use('/news',NewsRoutes)
 app.use('/banner',BannerRouter)
+app.use('/management', manageRoutes)
+app.use('/advisory', adviosoryRouter)
 
 
 export default app
