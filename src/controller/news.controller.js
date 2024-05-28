@@ -45,3 +45,13 @@ export const NewsById = async(req,res)=>{
     return res.status(500).json(new ApiResponse(500,null,"Internal Server Error"))
   }
 }
+
+export const DeleteNews = async(req,res)=>{
+  const {id} = req.params;
+  try {
+      const response = await News.findOneAndDelete({_id:id});
+      return res.status(200).json(new ApiResponse(200,response,'Deleted successfully'))
+  } catch (error) {
+    return res.status(500).json(new ApiResponse(500,null,"Internal Server Error"))
+  }
+}

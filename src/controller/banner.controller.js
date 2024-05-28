@@ -50,3 +50,14 @@ export async function CreateBanner(req, res) {
       .json(new ApiResponse(500, null, "Internal Server Error"));
   }
 }
+
+
+export async function DeleteBanner (req,res){
+  try {
+    const {id} = req.params;
+    const response = await Banner.findOneAndDelete({_id:id})
+    return res.status(200).json(new ApiResponse(200,response,'Deleted'))
+  } catch (error) {
+    return res.status(500).json(new ApiResponse(500,null,'Internal Server Error'))
+  }
+}

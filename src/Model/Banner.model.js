@@ -8,6 +8,12 @@ const BannerSchema = new Schema({
     isActive:{
         type:Boolean,
         required:true
+    },
+    date:{
+        type:String
+    },
+    title:{
+        type:String
     }
 });
 
