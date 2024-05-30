@@ -4,13 +4,12 @@ import { ApiResponse } from "../utils/apiResponse.js";
 export async function CreateContact(req, res) {
   try {
     const body = req.body;
-    const newContact = new Contact({
-      ...body,
-    });
-    await newContact.save();
+
+    const newContact = new Contact(body);
+    const savedData = await newContact.save();
     return res
       .status(200)
-      .json(new ApiResponse(200, newContact, "contact created successfully"));
+      .json(new ApiResponse(200, savedData, "contact created successfully"));
   } catch (error) {
     return res
       .status(500)
