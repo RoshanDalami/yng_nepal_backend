@@ -1,5 +1,6 @@
 import express from "express";
-import { GetManagement,CreateManagement, GetManagementById } from "../controller/management.controller";
+import { GetManagement,CreateManagement, GetManagementById } from "../controller/management.controller.js";
+import { upload } from "../middleware/multer.middleware.js";
 const manageRoutes = express.Router()
 manageRoutes.route("/getManagement").get(GetManagement);
 manageRoutes.route("/createManagement").post(

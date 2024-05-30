@@ -21,6 +21,9 @@ const ylcSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  orgName:{
+    type:String
+  }
 }, {
   timestamps: true,
 });

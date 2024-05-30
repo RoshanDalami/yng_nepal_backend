@@ -24,9 +24,6 @@ export async function CreateAdvisory(req, res) {
   }
 }
 
-import { Advisory } from "../Model/Advisory.model.js";
-import { ApiResponse } from "../utils/apiResponse.js";
-
 export async function GetAdvisory(req, res) {
   try {
     // Get all advisories

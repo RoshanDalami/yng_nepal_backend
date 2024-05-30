@@ -1,6 +1,6 @@
 import express from "express"
-import { GetAdvisory, CreateAdvisory } from "../controller/Advisory.controller"
-
+import { GetAdvisory, CreateAdvisory } from "../controller/Advisory.controller.js"
+import { upload } from "../middleware/multer.middleware.js"
 const adviosoryRouter = express.Router()
 
 adviosoryRouter.route("/getAdvisory").get(GetAdvisory)
