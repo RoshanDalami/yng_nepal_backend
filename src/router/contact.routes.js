@@ -8,8 +8,8 @@ import {
 const contactRoute = express.Router();
 
 contactRoute.route("/createContact").post(CreateContact)
-contactRoute.route("/getContact").post(Getcontact)
-contactRoute.route("/getContactById/:id").post(GetContactById)
+contactRoute.route("/getContact").get(Getcontact)
+contactRoute.route("/getContactById/:id").get(GetContactById)
 
 export default contactRoute
 
