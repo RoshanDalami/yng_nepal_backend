@@ -5,7 +5,7 @@ import { uploadOnCloudinary } from "../utils/cloudinary.js";
 export async function CreateAdvisory(req, res) {
   try {
     const body = req.body;
-    const file = req.files.iamge[0].path;
+    const file = req.files.image[0].path;
     if (!file)
       res.status(400).json(new ApiResponse(400, null, "File is required"));
     const fileupload = await uploadOnCloudinary(file);
